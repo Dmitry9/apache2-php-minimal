@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN apk --no-cache add apache2 php-apache2 imagemagick
 
-RUN apk add --update nodejs nodejs-npm && npm i -g yarn
+RUN apk add --update git nodejs nodejs-npm && npm i -g yarn
 
 RUN chmod 0755 /var/lib && mkdir -p /var/lib/php/session \
     && chown apache:apache /var/lib/php/session
