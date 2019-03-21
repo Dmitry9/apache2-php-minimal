@@ -7,8 +7,8 @@ RUN apk add --update nodejs nodejs-npm && npm i -g yarn
 RUN chmod 0755 /var/lib && mkdir -p /var/lib/php/session \
     && chown apache:apache /var/lib/php/session
 
-RUN ln -sf /dev/stdout /var/access.log \
-    ln -sf /dev/stderr /var/error.log
+RUN ln -sf /dev/stdout /var/www/logs/access.log \
+    ln -sf /dev/stderr /var/www/logs/error.log
 
 EXPOSE 80 443
 
